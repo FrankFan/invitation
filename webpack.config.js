@@ -13,10 +13,10 @@ module.exports = (noting, argv) => {
     new HtmlWebpackPlugin({
       title: 'Invitation from co',
       filename: 'index.html',
-      template: `${__dirname}/index.html`,
+      template: `${__dirname}/public/index.html`,
       chunks: ['invitation', 'common']
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
   ];
 
   if (isProduction) {
