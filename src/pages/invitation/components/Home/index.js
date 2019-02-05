@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './style.scss';
+import Header from '../Header';
+import Footer from '../Footer';
+import Main from '../Main';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>BROCCOLI & CO.</header>
-        <main>main</main>
-        <footer>
-          <p>Made with <i>❤</i> in Shanghai.</p>
-          <p>&copy; Broccoli & Co. All rights reserved.</p>
-        </footer>
+        <Header />
+        <Main />
+        <Footer />
       </div>
     );
   }

@@ -1,0 +1,32 @@
+.Main {
+  height: 80vh;
+  margin-top: 10vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: #555;
+    line-height: 1;
+    font-size: 60px;
+  }
+  p {
+    color: #808080;
+    font-size: 14px;
+    padding: 20px 0;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .Main {
+    h1 {
+      font-size: 35px;
+    }
+  }
+}
