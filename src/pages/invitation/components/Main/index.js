@@ -14,19 +14,19 @@ class Main extends Component {
   }
 
   onRequestBtnClick = () => {
-    console.log(111);
     this.setState({
       showInviteForm: true,
     });
   }
 
-  onFormBgClick = (event) => {
-    console.log(event.target.tagName);
-    if (event.target.tagName === 'SECTION') {
-      this.setState({
-        showInviteForm: false,
-      });
-    }
+  onFormCose = (event) => {
+    this.setState({
+      showInviteForm: false,
+    });
+  }
+
+  onFormSubmit = () => {
+    console.log('onFormSubmit');
   }
 
   onOKClick = () => {
@@ -48,7 +48,10 @@ class Main extends Component {
         <Button
           onBtnClick={this.onRequestBtnClick}
           text="Request an invite" />
-        {showInviteForm ? <InviteForm closeForm={this.onFormBgClick} /> : null}
+        {showInviteForm ?
+          <InviteForm
+            formSubmit={this.onFormSubmit}
+            closeForm={this.onFormCose} /> : null}
         {showInviteResult ? <Result onClick={this.onOKClick} /> : null}
       </main>
     );

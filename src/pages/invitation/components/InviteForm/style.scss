@@ -10,7 +10,19 @@
   justify-content: center;
   background: rgba(0, 0, 0, .8);
   position: absolute;
-  // display: none;
+
+  .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #818181;
+
+    &:hover,
+    &:focus {
+      color: #f1f1f1;
+    }
+  }
 
   form {
     padding: 20px 0;

@@ -6,6 +6,7 @@
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
+  transition: all .2s;
   text-decoration: none;
   outline: none;
   border: none;
@@ -14,5 +15,9 @@
     background: #3cb0fd;
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
   }
 }
