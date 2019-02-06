@@ -1,8 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (noting, argv) => {
   console.log(`mode = ${argv.mode}`);
@@ -16,7 +16,9 @@ module.exports = (noting, argv) => {
       template: `${__dirname}/public/index.html`,
       chunks: ['invitation', 'common']
     }),
-    // new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([
+      { from: 'public/favicon.ico', to: 'public/favicon.ico' },
+    ]),
   ];
 
   if (isProduction) {
@@ -82,9 +84,6 @@ module.exports = (noting, argv) => {
         chunks: 'all',
         name: 'common',
       },
-      // runtimeChunk: {
-      //   name: 'runtime',
-      // }
     },
     plugins,
   }

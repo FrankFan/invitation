@@ -14,6 +14,7 @@ class InviteForm extends Component {
       whichInput: '',
       showInviteResult: false,
       showLoading: false,
+      errorMsg: '',
     };
   }
 
@@ -68,6 +69,13 @@ class InviteForm extends Component {
     }).then(response => {
       if (response.status == 200) {
         this.props.closeForm('form');
+      } else if(response.status === 400) {
+        response.json().then((data) => {
+          this.setState({
+            showLoading: false,
+            errorMsg: data.errorMessage,
+          });
+        });
       }
     }).catch(err => {
       console.log(err);
@@ -81,6 +89,14 @@ class InviteForm extends Component {
     let flag = false;
     if (!name) {
       console.log('name is required');
+      this.setState({
+        displayError: true,
+        whichInput: 'name',
+      });
+      return flag;
+    }
+    if (name.length < 3) {
+      console.log('name needs to be at least 3 characters long');
       this.setState({
         displayError: true,
         whichInput: 'name',
@@ -133,7 +149,6 @@ class InviteForm extends Component {
   render() {
     const {
       closeForm,
-      errorMsg,
     } = this.props;
     const {
       nameValue,
@@ -142,6 +157,7 @@ class InviteForm extends Component {
       displayError,
       whichInput,
       showLoading,
+      errorMsg,
     } = this.state;
     const shake = displayError ? 'animated shake redalert' : '';
     return(
@@ -156,7 +172,7 @@ class InviteForm extends Component {
           <div className="control">
             <Button disabled={showLoading ? 'disabled' : ''} text={showLoading ? 'Sending...' : 'Send'} />
           </div>
-          { errorMsg ? <p className="msg">* Error message from server here.</p> : null}
+          { errorMsg ? <p className="msg">* {errorMsg}</p> : null}
         </form>
       </section>
     );

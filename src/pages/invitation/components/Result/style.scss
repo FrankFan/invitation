@@ -29,3 +29,14 @@
     }
   }
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .Result {
+    .content {
+      width: 80vw;
+      button {
+        width: 50vw !important;
+      }
+    }
+  }
+}

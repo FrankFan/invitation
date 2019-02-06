@@ -57,3 +57,16 @@
     }
   }
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .InviteForm {
+    form {
+      input {
+        width: 60vw;
+      }
+      button {
+        width: 50vw !important;
+      }
+    }
+  }
+}

@@ -11,6 +11,10 @@
   outline: none;
   border: none;
 
+  span {
+    padding: 0 20px;
+  }
+
   &:hover {
     background: #3cb0fd;
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);

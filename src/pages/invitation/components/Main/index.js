@@ -3,6 +3,7 @@ import './style.scss';
 import Button from '../Button';
 import InviteForm from '../InviteForm';
 import Result from '../Result';
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -47,11 +48,8 @@ class Main extends Component {
         <h1>A better way</h1>
         <h1>to enjoy everyday.</h1>
         <p>Be the first to know when we launch.</p>
-        <Button
-          onBtnClick={this.onRequestBtnClick}
-          text="Request an invite" />
-        {showInviteForm ?
-          <InviteForm closeForm={this.onFormCose} /> : null}
+        <Button onBtnClick={this.onRequestBtnClick} text="Request an invite" />
+        {showInviteForm ? <InviteForm closeForm={this.onFormCose} /> : null}
         {showInviteResult ? <Result onBtnClick={this.onOKClick} /> : null}
       </main>
     );
