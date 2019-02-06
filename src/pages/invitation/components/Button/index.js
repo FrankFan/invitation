@@ -6,9 +6,10 @@ const Button = (props) => {
   const {
     onBtnClick,
     text,
+    disabled,
   } = props;
   return (
-    <button onClick={() => {onBtnClick()}} className="primary-btn">
+    <button disabled={disabled ? 'disabled' : ''} onClick={() => {onBtnClick && onBtnClick()}} className="primary-btn">
       <span>{text}</span>
     </button>
   );

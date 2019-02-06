@@ -38,6 +38,9 @@
       font-size: 16px;
       outline: none;
       width: 30vw;
+      &.redalert {
+        border: 2px solid red !important;
+      }
     }
 
     .control {

@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = (noting, argv) => {
-  console.log(`mode = ${argv.mode}`)
+  console.log(`mode = ${argv.mode}`);
   const isProduction = argv.mode === 'production';
 
   let plugins = [

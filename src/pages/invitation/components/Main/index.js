@@ -3,13 +3,11 @@ import './style.scss';
 import Button from '../Button';
 import InviteForm from '../InviteForm';
 import Result from '../Result';
-
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showInviteForm: false,
-      showInviteResult: false,
     };
   }
 
@@ -19,19 +17,23 @@ class Main extends Component {
     });
   }
 
-  onFormCose = (event) => {
-    this.setState({
-      showInviteForm: false,
-    });
-  }
-
-  onFormSubmit = () => {
-    console.log('onFormSubmit');
+  onFormCose = (param) => {
+    if (param === 'form') {
+      this.setState({
+        showInviteForm: false,
+        showInviteResult: true,
+      });
+    } else {
+      this.setState({
+        showInviteForm: false,
+        showInviteResult: false,
+      });
+    }
   }
 
   onOKClick = () => {
     this.setState({
-      showInviteResult: true,
+      showInviteResult: false,
     });
   }
 
@@ -49,10 +51,8 @@ class Main extends Component {
           onBtnClick={this.onRequestBtnClick}
           text="Request an invite" />
         {showInviteForm ?
-          <InviteForm
-            formSubmit={this.onFormSubmit}
-            closeForm={this.onFormCose} /> : null}
-        {showInviteResult ? <Result onClick={this.onOKClick} /> : null}
+          <InviteForm closeForm={this.onFormCose} /> : null}
+        {showInviteResult ? <Result onBtnClick={this.onOKClick} /> : null}
       </main>
     );
   }
