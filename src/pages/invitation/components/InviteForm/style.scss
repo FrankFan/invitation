@@ -1,0 +1,44 @@
+@import '@/common/styles/color.scss';
+
+.InviteForm {
+  color: #eee;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .8);
+  position: absolute;
+  // display: none;
+
+  form {
+    padding: 20px 0;
+    position: relative;
+
+    input {
+      display: block;
+      margin-bottom: 15px;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #cfcfcf;
+      font-family: 'Roboto Slab', sans-serif;
+      font-size: 16px;
+      outline: none;
+      width: 30vw;
+    }
+
+    .control {
+      display: flex;
+      justify-content: center;
+      button {
+        width: 25vw;
+      }
+    }
+
+    .msg {
+      color: red;
+      font-size: 20px;
+    }
+  }
+}

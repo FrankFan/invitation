@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 
-class Header extends Component {
-  render() {
-    return (
-      <header className="Header">
-        BROCCOLI & CO.
-      </header>
-    );
-  }
+const Header = (props) => {
+  console.log(props);
+
+  return (
+    <header className="Header">
+      {props.text}
+    </header>
+  );
 }
 
 export default Header;

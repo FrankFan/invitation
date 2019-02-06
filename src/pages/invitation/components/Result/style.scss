@@ -1,0 +1,31 @@
+.Result {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .8);
+  position: absolute;
+
+  .content {
+    padding: 10px;
+    background: #fff;
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+
+    p {
+      padding: 0 30px;
+      font-size: 18px;
+    }
+
+    button {
+      width: 30vw;
+    }
+  }
+}

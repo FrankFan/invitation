@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 
 // from https://www.designrush.com/resources/css3buttongenerator
-class Button extends Component {
-  render() {
-    return (
-      <button className="primary-btn">
-        <span>{this.props.text}</span>
-      </button>
-    );
-  }
-}
+const Button = (props) => {
+  const {
+    onBtnClick,
+    text,
+  } = props;
+  return (
+    <button onClick={() => {onBtnClick()}} className="primary-btn">
+      <span>{text}</span>
+    </button>
+  );
+};
 
 export default Button;
