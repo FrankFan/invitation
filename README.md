@@ -1,9 +1,40 @@
 # Invitition
 
+This is an invitation for Broccoli & Co.
 
-## backend
 
-API: `https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth`
+## development
 
-Media query:
-`https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488`
+```bash
+$ npm i
+$ npm start
+$ open http://127.0.0.1:9000/
+
+# run test spec
+$ npm test
+```
+
+![start](./docs/start.png)
+
+## build
+
+```bash
+$ npm run  build
+```
+
+![build](./docs/build.png)
+
+the dist directory structure is:
+
+```
+├── common
+│   └── common.c5ca0f3d.js
+├── css
+│   ├── common.cd5a8b5a.css
+│   └── invitation.10d404b5.css
+├── index.html
+├── invitation
+│   └── invitation.e59167f5.js
+└── public
+    └── favicon.ico
+```
