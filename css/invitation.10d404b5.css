@@ -1,0 +1,225 @@
+html, body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Roboto Slab', sans-serif; }
+
+h1, h2, p {
+  margin: 0; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+@-webkit-keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0); }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0); } }
+
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0); }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0); } }
+
+.shake {
+  -webkit-animation-name: shake;
+          animation-name: shake; }
+
+
+.Header {
+  height: 10vh;
+  width: 100%;
+  line-height: 10vh;
+  border-bottom: 1px solid #ccc;
+  font-size: 30px;
+  font-weight: bold;
+  color: #808080;
+  padding-left: 50px;
+  position: fixed;
+  top: 0; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .Header {
+    text-align: center;
+    padding-left: 0; } }
+
+.Footer {
+  text-align: center;
+  height: 10vh;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .Footer p {
+    color: #808080; }
+    .Footer p i {
+      color: red;
+      font-style: normal; }
+
+.Main {
+  height: 80vh;
+  margin-top: 10vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .Main h1 {
+    color: #555;
+    line-height: 1;
+    font-size: 60px; }
+  .Main p {
+    color: #808080;
+    font-size: 14px;
+    padding: 20px 0; }
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .Main h1 {
+    font-size: 35px; } }
+
+.primary-btn {
+  background: #3498db;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  transition: all .2s;
+  text-decoration: none;
+  outline: none;
+  border: none; }
+  .primary-btn span {
+    padding: 0 20px; }
+  .primary-btn:hover {
+    background: #3cb0fd;
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none; }
+  .primary-btn:active {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px); }
+  .primary-btn[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5 !important;
+    border-color: #d9d9d9 !important;
+    text-shadow: none;
+    box-shadow: none;
+    background-image: none !important; }
+
+.InviteForm {
+  color: #eee;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute; }
+  .InviteForm .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #818181; }
+    .InviteForm .closebtn:hover, .InviteForm .closebtn:focus {
+      color: #f1f1f1; }
+  .InviteForm form {
+    padding: 20px 0;
+    position: relative; }
+    .InviteForm form input {
+      display: block;
+      margin-bottom: 15px;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #cfcfcf;
+      font-family: 'Roboto Slab', sans-serif;
+      font-size: 16px;
+      outline: none;
+      width: 30vw; }
+      .InviteForm form input.redalert {
+        border: 2px solid red !important; }
+    .InviteForm form .control {
+      display: flex;
+      justify-content: center; }
+      .InviteForm form .control button {
+        width: 25vw; }
+    .InviteForm form .msg {
+      color: red;
+      font-size: 20px; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .InviteForm form input {
+    width: 60vw; }
+  .InviteForm form button {
+    width: 50vw !important; } }
+
+.Result {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute; }
+  .Result .content {
+    padding: 10px;
+    background: #fff;
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px; }
+    .Result .content p {
+      padding: 0 30px;
+      font-size: 18px; }
+    .Result .content button {
+      width: 30vw; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .Result .content {
+    width: 80vw; }
+    .Result .content button {
+      width: 50vw !important; } }
+
+
